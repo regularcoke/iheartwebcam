@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>I♡WEBCAM</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <header>
+            <!--<h1>I♡WEBCAM</h1>-->
+            <a href="/index.html"><img src="/iheartwebcam-logo.png" alt="iheartwebcam Logo" width="200px" /></a>
+        </header>
+        <div class="upload-container">
+            <div class="img-container">
+                <img id="uploadedImage" alt="Uploaded Image" />
+            </div>
+            <div class="user-form">
+                <div class="user-category">
+                    <div>
+                        <input type="radio" id="anonymous" name="user" value="anonymous" checked />
+                        <label for="anonymous">Anonymous</label>
+                    </div>
+
+                    <div>
+                        <input type="radio" id="unique-id" name="user" value="unique-id" />
+                        <label for="unique-id">Unique ID</label>
+                    </div>
+
+                    <div>
+                        <label for="userID">#</label>
+                        <input type="text" id="userID" placeholder="ENTER ID" disabled />
+                    </div>
+                </div>
+                <div class="caption-container">
+                    <div class="caption-title">Please enter tags:</div>
+                    <div class="caption-box">
+                        <textarea placeholder="#..." class="caption-input"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div>
+            <input type="submit" id="submitButton" value="UPLOAD" action="" />
+            <input type="button" id="discardButton" value="DISCARD" />
+            </div>
+        </div>
+        <footer>
+            <h5><a href="guidelines.html">guidelines</a>, <a href="privacy.html">privacy</a></h5>
+        </footer>
+        <script>
+            window.onload = function () {
+                // Retrieve the stored image from localStorage
+                const storedImage = localStorage.getItem("capturedImage");
+                if (storedImage) {
+                    document.getElementById("uploadedImage").src = storedImage;
+                } else {
+                    document.getElementById("uploadedImage").alt = "No image found!";
+                }
+            };
+            
+            
+        </script>
+    </body>
+</html>

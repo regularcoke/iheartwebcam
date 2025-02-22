@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>I♡WEBCAM</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <div></div>
+        <div class="container">
+            <div class="header">
+                <div>
+                <button onClick="stopCam()">x</button>
+                    </div>
+                <div>
+                    <a href="/index.html" class="logo"><img src="/iheartwebcam-logo.png" width="130px" /></a>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <video id="video" autoplay="true"></video>
+                <img id="capturedImage" style="display: none" />
+            </div>
+
+            <div class="interface">
+                <button id="retakeButton" onClick="retake()">retake</button>
+                <button id="photoButton" onClick="takePhoto()" class="photo-button"></button>
+                <button id="nextButton" onClick="next()">next</button>
+            </div>
+        </div>
+        <div></div>
+        <script>
+        window.onload = startCam;
+        </script>
+    </body>
+</html>
